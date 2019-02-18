@@ -27,9 +27,19 @@ function startCombat() {
   if(userHealth <= 0) {
     alert("You lose!")
     grantWins++;
+    alert("Grant has won " +grantWins + " games")
   } else if(grantHealth <= 0) {
     alert("YOU WIN!!!")
     userWins++;
+    alert("You've won " + userWins + " games!")
+  }
+
+  if(userWins < 3){
+  	userHealth = 40;
+    grantHealth = 10;
+  	startGame();
+  }else if(grantWins === 1) {
+  	alert("Grant wins the game")
   }
 }
 
