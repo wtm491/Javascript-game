@@ -64,5 +64,5 @@ startGame();
 
 //Quit alert message
 function quitGame(){
-	alert("You've quit the game...")
+	alert("You've quit the current game...Restarting now")
 }
