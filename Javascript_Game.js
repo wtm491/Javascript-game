@@ -31,6 +31,7 @@ function startCombat() {
     }
   }
 
+//Check for who won the game
   if(userHealth <= 0) {
     alert("You lose!")
     grantWins++;
@@ -58,8 +59,10 @@ function getDamage() {
 
 }
 
+//PLAY!
+startGame();
+
+//Quit alert message
 function quitGame(){
 	alert("You've quit the game...")
 }
-
-startGame();
