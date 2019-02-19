@@ -1,5 +1,3 @@
-"use strict";
-
 let userHealth = 40;
 let grantHealth = 10;
 let userWins = 0;
@@ -20,10 +18,16 @@ function startGame() {
 //Combat - subract userHealth and grantHealth from random number generated in getDamage function
 function startCombat() {
   while(userHealth > 0 && grantHealth > 0) {
-    userHealth = userHealth - getDamage();
+  let offense = prompt("Do you want to attack or quit?")
+  if(offense === "attack"){
+  	userHealth = userHealth - getDamage();
     grantHealth = grantHealth - getDamage();
 
-    alert("Grant has " + grantHealth + " health points and you have " + userHealth + " health points")
+    alert("Grant has " + grantHealth + " health points and you have " + userHealth + " health points");
+  	}else if(offense === "quit") {
+    	quitGame();
+    	break;
+    }
   }
 
   if(userHealth <= 0) {
@@ -45,11 +49,15 @@ function startCombat() {
   }
 }
 
-// Calculate damage per turn. reduce by a number between 1 and 5 
+// Calculate damage per turn. reduce by a number between 1 and 5
 function getDamage() {
   let damage = Math.floor(Math.random() * 6);
   return damage;
 
+}
+
+function quitGame(){
+	alert("You've quit the game...")
 }
 
 startGame();
