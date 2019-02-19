@@ -10,7 +10,7 @@ function startGame() {
   if(play === "Yes" || play === "yes") {
     startCombat();
   }else {
-    alert("Booooo");
+    alert("Lame...");
   }
 
 }
