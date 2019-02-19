@@ -19,11 +19,12 @@ function startGame() {
 function startCombat() {
   while(userHealth > 0 && grantHealth > 0) {
   let offense = prompt("Do you want to attack or quit?")
+
   if(offense === "attack"){
   	userHealth = userHealth - getDamage();
     grantHealth = grantHealth - getDamage();
-
     alert("Grant has " + grantHealth + " health points and you have " + userHealth + " health points");
+
   	}else if(offense === "quit") {
     	quitGame();
     	break;
@@ -40,6 +41,7 @@ function startCombat() {
     alert("You've won " + userWins + " games!")
   }
 
+//Check number of wins
   if(userWins < 3){
   	userHealth = 40;
     grantHealth = 10;
